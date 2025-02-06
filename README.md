@@ -1,2 +1,3 @@
-# torrens-resources
+# Torrens Class Resources
+
 Torrens class resources
