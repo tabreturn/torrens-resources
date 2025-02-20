@@ -219,7 +219,7 @@ This task involves [Truchet tiles](https://en.wikipedia.org/wiki/Truchet_tiles) 
 
 Here are the four tiles, which you can draw using the `triangle()` function:
 
-![](task-4-tiles.png)
+![](task-4-tiles.svg)
 
 Each time you run the script, it must produce a different random arrangement. You'll need to use the `random()` function, which returns a random value between 0.0 and 0.1
 
