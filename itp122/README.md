@@ -68,7 +68,7 @@ In Assessment 1, you applied and explained the use of variables, expressions, ba
 
 Each task begins with some code to get you started. The goal is to complete the script so that your output matches each graphic provided. Here's a summary of the different functions you'll need:
 
-![](0-cheat-sheet.png)
+![](cheat-sheet.png)
 
 You'll add Python `if`, `else`, `for`, and other statements the those above to successfully complete each task.
 
