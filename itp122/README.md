@@ -112,10 +112,10 @@ Here's the result you're working toward:
 Starter code:
 ```python
 # setup
-size(500, 500)           # canvas size
-background('#FFFFFF')    # background colour
-cx = width / 2           # canvas horizontal centre
-cy = height / 2          # canvas vertical centre
+size(500, 500)         # canvas size
+background('#FFFFFF')  # background colour
+cx = width / 2         # canvas horizontal centre
+cy = height / 2        # canvas vertical centre
 
 i = 1
 
@@ -134,12 +134,12 @@ Here's the result you're working toward:
 Starter code:
 ```python
 # setup
-size(500, 500)           # canvas size
-background('#FFFFFF')    # background colour
-cx = width / 2           # canvas horizontal centre
-cy = height / 2          # canvas vertical centre
-no_fill()                # set fill to none
-stroke_weight(5)         # set outline to 5-pixels-wide
+size(500, 500)         # canvas size
+background('#FFFFFF')  # background colour
+cx = width / 2         # canvas horizontal centre
+cy = height / 2        # canvas vertical centre
+no_fill()              # set fill to none
+stroke_weight(5)       # set outline to 5-pixels-wide
 
 # ... INSERT MISSING CODE HERE ...
 ```
