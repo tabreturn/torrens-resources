@@ -21,7 +21,7 @@ services:
     container_name: mariadb
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: wordpress
+      MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: wordpress
       MYSQL_USER: wordpress
       MYSQL_PASSWORD: wordpress
@@ -43,13 +43,12 @@ services:
       MYSQL_ROOT_PASSWORD: wordpress
 
   php_app:
-    image: php:apache
+    image: webdevops/php-apache:latest
     container_name: php_app
     restart: always
     ports:
       - "8082:80"
     volumes:
-      - ./php_app:/var/www/html
+      - ./php_app:/app
     depends_on:
       - db
-
