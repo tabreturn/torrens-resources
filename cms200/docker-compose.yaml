@@ -43,12 +43,16 @@ services:
       MYSQL_ROOT_PASSWORD: wordpress
 
   php_app:
-    image: webdevops/php-apache:latest
+    image: php:apache
+    build:
+      context: .
+      dockerfile: mysqli.dockerfile
     container_name: php_app
     restart: always
     ports:
       - "8082:80"
     volumes:
-      - ./php_app:/app
+      - ./php_app:/var/www/html
     depends_on:
       - db
+
