@@ -31,7 +31,10 @@ services:
       - ./wordpress_assessment:/var/www/html
       - ./uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
 ```
+
 3. Now, open your terminal and --
    - `cd` to where your **docker-compose.yaml** file resides (alongside what we've been working on)
    - then `docker-compose down`
    - then `docker-compose up -d`
+
+4. You now have a new WordPress instance running on `localhost:8083` with its own database (you'll new to run through the installation steps again)
