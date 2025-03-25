@@ -37,4 +37,4 @@ services:
    - then `docker-compose down`
    - then `docker-compose up -d`
 
-4. You now have a new WordPress instance running on `localhost:8083` with its own database (you'll new to run through the installation steps again)
+4. You now have a new WordPress instance running on `localhost:8083` with its own database (note: you'll need to run through a fresh installation)
