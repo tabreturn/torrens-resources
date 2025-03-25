@@ -32,6 +32,6 @@ services:
       - ./uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
 ```
 3. Now, open your terminal and --
-  1. `cd` to where your **docker-compose.yaml** file resides (alongside what we've been working on)
-  2. then `docker-compose down`
-  3. then `docker-compose up`
+   1. `cd` to where your **docker-compose.yaml** file resides (alongside what we've been working on)
+   2. then `docker-compose down`
+   3. then `docker-compose up`
