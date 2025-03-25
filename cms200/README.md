@@ -2,7 +2,7 @@
 
 ## Add a new WordPress instance for Assessment 3
 
-1. Log in to phpMyAdmin (as root), and use the SWL tab to create a new database and user:
+1. Log in to phpMyAdmin (as root), and use the SQL tab to create a new database and user:
 ```
 CREATE DATABASE final_assessment;
 CREATE USER 'final_assessment'@'%' IDENTIFIED BY 'final_assessment';
