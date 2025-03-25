@@ -34,4 +34,4 @@ services:
 3. Now, open your terminal and --
    - `cd` to where your **docker-compose.yaml** file resides (alongside what we've been working on)
    - then `docker-compose down`
-   - then `docker-compose up`
+   - then `docker-compose up -d`
