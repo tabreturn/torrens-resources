@@ -4,9 +4,9 @@
 
 1. Log in to phpMyAdmin (as root), and use the SQL tab to create a new database and user:
 ```
-CREATE DATABASE final_assessment;
-CREATE USER 'final_assessment'@'%' IDENTIFIED BY 'final_assessment';
-GRANT ALL PRIVILEGES ON final_assessment.* TO 'final_assessment'@'%';
+CREATE DATABASE wordpress_assessment;
+CREATE USER 'wordpress_assessment'@'%' IDENTIFIED BY 'wordpress_assessment';
+GRANT ALL PRIVILEGES ON wordpress_assessment.* TO 'wordpress_assessment'@'%';
 FLUSH PRIVILEGES;
 ```
 
@@ -16,7 +16,7 @@ services:
  ...
   wordpress_assessment:
     image: wordpress:latest
-    container_name: final_assessment
+    container_name: wordpress_assessment
     restart: always
     depends_on:
       - db
@@ -24,9 +24,9 @@ services:
       - "8083:80"
     environment:
       WORDPRESS_DB_HOST: db
-      WORDPRESS_DB_USER: final_assessment
-      WORDPRESS_DB_PASSWORD: final_assessment
-      WORDPRESS_DB_NAME: final_assessment
+      WORDPRESS_DB_USER: wordpress_assessment
+      WORDPRESS_DB_PASSWORD: wordpress_assessment
+      WORDPRESS_DB_NAME: wordpress_assessment
     volumes:
       - ./wordpress_assessment:/var/www/html
       - ./uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
@@ -37,4 +37,4 @@ services:
    - then `docker-compose down`
    - then `docker-compose up -d`
 
-4. You now have a new WordPress instance running on `localhost:8083` with its own database (note: you'll need to run through a fresh installation)
+4. You now have a new WordPress instance running on `localhost:8083` with its own database (note: you'll need to run through a fresh installation).
