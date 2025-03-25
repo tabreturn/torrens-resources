@@ -2,7 +2,7 @@
 
 ## Add a new WordPress instance for Assessment 3
 
-#. Log in to phpMyAdmin (as root), and use the SWL tab to create a new database and user:
+1. Log in to phpMyAdmin (as root), and use the SWL tab to create a new database and user:
 ```
 CREATE DATABASE final_assessment;
 CREATE USER 'final_assessment'@'%' IDENTIFIED BY 'final_assessment';
@@ -10,7 +10,7 @@ GRANT ALL PRIVILEGES ON final_assessment.* TO 'final_assessment'@'%';
 FLUSH PRIVILEGES;
 ```
 
-#. Open your **docker-compose.yaml** add a new WordPress service:
+2. Open your **docker-compose.yaml** add a new WordPress service:
 ```
 services:
  ...
@@ -31,7 +31,7 @@ services:
       - ./wordpress_assessment:/var/www/html
       - ./uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
 ```
-#. Now, open your terminal and --
-  #. `cd` to where your **docker-compose.yaml** file resides (alongside what we've been working on)
-  #. then `docker-compose down`
-  #. then `docker-compose up`
+3. Now, open your terminal and --
+  1. `cd` to where your **docker-compose.yaml** file resides (alongside what we've been working on)
+  2. then `docker-compose down`
+  3. then `docker-compose up`
