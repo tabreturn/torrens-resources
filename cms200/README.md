@@ -3,15 +3,17 @@
 ## Add a new WordPress instance for Assessment 3
 
 1. Log in to phpMyAdmin (as root), and use the SQL tab to create a new database and user:
-```
+
+```sql
 CREATE DATABASE wordpress_assessment;
 CREATE USER 'wordpress_assessment'@'%' IDENTIFIED BY 'wordpress_assessment';
 GRANT ALL PRIVILEGES ON wordpress_assessment.* TO 'wordpress_assessment'@'%';
 FLUSH PRIVILEGES;
 ```
 
-2. Open your **docker-compose.yaml** add a new WordPress service:
-```
+2. Open your **docker-compose.yaml** and add a new WordPress service:
+
+```yaml
 services:
  ...
   wordpress_assessment:
@@ -28,13 +30,30 @@ services:
       WORDPRESS_DB_PASSWORD: wordpress_assessment
       WORDPRESS_DB_NAME: wordpress_assessment
     volumes:
-      - ./wordpress_assessment:/var/www/html
+      - ./wordpress_assessment/wp-content:/var/www/html/wp-content
       - ./uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
 ```
 
-3. Now, open your terminal and --
-   - `cd` to where your **docker-compose.yaml** file resides (alongside what we've been working on)
-   - then `docker-compose down`
-   - then `docker-compose up -d`
+Create this folder on your host:
 
-4. You now have a new WordPress instance running on `localhost:8083` with its own database (note: you'll need to run through a fresh installation).
+```bash
+mkdir -p wordpress_assessment/wp-content
+```
+
+3. Now, open your terminal and:
+
+- `cd` to where your **docker-compose.yaml** file resides
+- then run:
+
+```bash
+docker compose down
+docker compose up -d
+```
+
+4. You now have a new WordPress instance running at:
+
+```
+http://localhost:8083
+```
+
+It has its own database and its own `wp-content` directory (you’ll need to complete a fresh WordPress installation).
