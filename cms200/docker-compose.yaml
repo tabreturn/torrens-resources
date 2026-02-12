@@ -15,14 +15,9 @@ services:
       WORDPRESS_CONFIG_EXTRA: |
         define('FS_METHOD', 'direct');
     volumes:
-      - ./wp_data/wp-content:/var/www/html/wp-content
+      - wp_content:/var/www/html/wp-content
       - ./uploads.ini:/usr/local/etc/php/conf.d/uploads.ini
-    command: >
-      bash -lc "mkdir -p /var/www/html/wp-content/{themes,plugins,uploads,upgrade} &&
-                chown -R www-data:www-data /var/www/html/wp-content &&
-                chmod -R 775 /var/www/html/wp-content &&
-                exec apache2-foreground"
-  
+
   db:
     image: mariadb:latest
     container_name: mariadb
@@ -64,3 +59,4 @@ services:
 
 volumes:
   db_data:
+  wp_content:
