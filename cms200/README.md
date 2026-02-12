@@ -1,6 +1,6 @@
 # CMS200 Resources
 
-## Add a new WordPress instance for Assessment 3
+## Add a new WordPress instance for Assessment 2/3
 
 1. Log in to phpMyAdmin (as root), and use the SQL tab to create a new database and user:
 
