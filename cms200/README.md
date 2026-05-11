@@ -39,7 +39,6 @@ services:
     volumes:
       - wordpress_assessment_data:/var/www/html
       - ./php.ini:/usr/local/etc/php/conf.d/custom.ini:ro
-      - ./uploads.ini:/usr/local/etc/php/conf.d/uploads.ini:ro
     logging:
       driver: json-file
       options:
