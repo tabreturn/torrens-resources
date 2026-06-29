@@ -1,7 +1,6 @@
 services:
   wordpress:
     image: wordpress:6.5-apache
-    container_name: wordpress
     restart: unless-stopped
     depends_on:
       - db
@@ -25,12 +24,10 @@ services:
 
   db:
     image: mariadb:11.4
-    container_name: mariadb
     restart: unless-stopped
     command:
       - --innodb-buffer-pool-size=512M
       - --max-connections=100
-      - --innodb-redo-log-capacity=256M
       - --tmp-table-size=64M
       - --max-heap-table-size=64M
     environment:
@@ -50,7 +47,6 @@ services:
 
   phpmyadmin:
     image: phpmyadmin:5
-    container_name: phpmyadmin
     restart: unless-stopped
     depends_on:
       - db
@@ -71,7 +67,6 @@ services:
     build:
       context: .
       dockerfile: mysqli.dockerfile
-    container_name: php_app
     restart: unless-stopped
     depends_on:
       - db
@@ -88,4 +83,3 @@ services:
 
 volumes:
   db_data:
-
