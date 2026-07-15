@@ -21,7 +21,7 @@ FLUSH PRIVILEGES;
 ```
 services:
   ...
-  wordpress:
+  wordpress_assessment:
     image: wordpress:6.5-apache
     restart: unless-stopped
     depends_on:
