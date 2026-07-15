@@ -21,9 +21,8 @@ FLUSH PRIVILEGES;
 ```
 services:
   ...
-  wordpress_assessment:
+  wordpress:
     image: wordpress:6.5-apache
-    container_name: wordpress_assessment
     restart: unless-stopped
     depends_on:
       - db
@@ -37,18 +36,13 @@ services:
       WORDPRESS_CONFIG_EXTRA: |
         define('DISABLE_WP_CRON', true);
     volumes:
-      - wordpress_assessment_data:/var/www/html
+      - ./wordpress_data:/var/www/html
       - ./php.ini:/usr/local/etc/php/conf.d/custom.ini:ro
     logging:
       driver: json-file
       options:
         max-size: "10m"
         max-file: "3"
-  
-  volumes:
-    wordpress_data:
-    wordpress_assessment_data:
-    db_data:
 ```
 
 3. Now, open your terminal and --
