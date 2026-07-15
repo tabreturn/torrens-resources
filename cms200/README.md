@@ -36,7 +36,7 @@ services:
       WORDPRESS_CONFIG_EXTRA: |
         define('DISABLE_WP_CRON', true);
     volumes:
-      - ./wordpress_data:/var/www/html
+      - ./wordpress_assessment_data:/var/www/html
       - ./php.ini:/usr/local/etc/php/conf.d/custom.ini:ro
     logging:
       driver: json-file
