@@ -2,7 +2,7 @@
 
 ## Add a new WordPress instance for Assessment 3
 
-1 -- Create a new database and user
+### 1. Create a new database and user
 
 Log in to phpMyAdmin as `root`, open the **SQL** tab, and run:
 
@@ -17,13 +17,12 @@ TO 'wordpress_assessment'@'%';
 FLUSH PRIVILEGES;
 ```
 
-2 -- Open your **docker-compose.yaml** add a new WordPress service:
+2. Open your **docker-compose.yaml** add a new WordPress service:
 ```
 services:
   ...
   wordpress_assessment:
     image: wordpress:6.5-apache
-    container_name: wordpress_assessment
     restart: unless-stopped
     depends_on:
       - db
@@ -37,23 +36,18 @@ services:
       WORDPRESS_CONFIG_EXTRA: |
         define('DISABLE_WP_CRON', true);
     volumes:
-      - wordpress_assessment_data:/var/www/html
+      - ./wordpress_assessment_data:/var/www/html
       - ./php.ini:/usr/local/etc/php/conf.d/custom.ini:ro
     logging:
       driver: json-file
       options:
         max-size: "10m"
         max-file: "3"
-  
-  volumes:
-    wordpress_data:
-    wordpress_assessment_data:
-    db_data:
 ```
 
-3 -- Now, open your terminal and:
-- `cd` to where your **docker-compose.yaml** file resides (alongside what we've been working on)
-- then `docker-compose down`
-- then `docker-compose up -d`
+3. Now, open your terminal and --
+   - `cd` to where your **docker-compose.yaml** file resides (alongside what we've been working on)
+   - then `docker-compose down`
+   - then `docker-compose up -d`
 
-4 -- You now have a new WordPress instance running on `localhost:8083` with its own database (note: you'll need to run through a fresh installation).
+4. You now have a new WordPress instance running on `localhost:8083` with its own database (note: you'll need to run through a fresh installation).
