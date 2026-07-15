@@ -17,7 +17,7 @@ TO 'wordpress_assessment'@'%';
 FLUSH PRIVILEGES;
 ```
 
-### 2. Open your **docker-compose.yaml** add a new WordPress service:
+### 2. Open your **docker-compose.yaml** add a new WordPress service
 ```
 services:
   ...
@@ -45,11 +45,12 @@ services:
         max-file: "3"
 ```
 
-### 3. Now, open your terminal and --
+### 3. Re-run docker-compose
 1. `cd` to where your **docker-compose.yaml** file resides (alongside what we've been working on)
 2. then `docker-compose down`
 3. then `docker-compose up -d`
 
 
-### 4. Run WordPress Installation
+### 4. Install WordPress
 You now have a new WordPress instance running on `localhost:8083` with its own database.
+
