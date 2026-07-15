@@ -17,7 +17,7 @@ TO 'wordpress_assessment'@'%';
 FLUSH PRIVILEGES;
 ```
 
-### 2. Open your **docker-compose.yaml** add a new WordPress service
+### 2. Open your **docker-compose.yaml** and add a new WordPress service
 ```
 services:
   ...
